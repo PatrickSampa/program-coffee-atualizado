@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="388.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.coffeedelcio.BuscarCliente">
+   <children>
+      <Label layoutX="33.0" layoutY="70.0" text="Nome">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="132.0" text="CPF">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="200.0" prefHeight="25.0" prefWidth="121.0" text="Telefone">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="264.0" prefHeight="25.0" prefWidth="121.0" text="Email">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="322.0" prefHeight="25.0" prefWidth="121.0" text="Endereço">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="408.0" layoutY="69.0" prefHeight="28.0" prefWidth="88.0" text="Descrição">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="224.0" layoutY="19.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="98.0" text="Procurar">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="549.0" layoutY="360.0" mnemonicParsing="false" text="Início" />
+      <TextField layoutX="33.0" layoutY="20.0" prefHeight="27.0" prefWidth="172.0" promptText="Informe o nome ou CPF">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></TextField>
+      <TextField layoutX="33.0" layoutY="95.0" prefHeight="14.0" prefWidth="172.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="33.0" layoutY="157.0" prefHeight="27.0" prefWidth="172.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="33.0" layoutY="225.0" prefHeight="25.0" prefWidth="207.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="33.0" layoutY="289.0" prefHeight="25.0" prefWidth="207.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="33.0" layoutY="347.0" prefHeight="25.0" prefWidth="207.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="332.0" layoutY="97.0" prefHeight="231.0" prefWidth="240.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

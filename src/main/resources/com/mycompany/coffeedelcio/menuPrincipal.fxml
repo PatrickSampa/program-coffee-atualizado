@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="495.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.coffeedelcio.MenuPrincipal">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="495.0" prefWidth="254.0" style="-fx-background-color: #0858a1;">
+         <children>
+            <VBox layoutX="32.0" layoutY="157.0" prefHeight="317.0" prefWidth="192.0" spacing="10.0" stylesheets="@styles/menuOpcoes.css">
+               <children>
+                  <Button fx:id="clickCadastroPedido" mnemonicParsing="false" onAction="#cadastroPedido" prefHeight="72.0" prefWidth="178.0" text="Cadastrar Pedido">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickCadastrarCliente" mnemonicParsing="false" onAction="#cadastrarCliente" prefHeight="69.0" prefWidth="178.0" text="Cadastrar Cliente">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickBuscarCliente" mnemonicParsing="false" onAction="#buscarCliente" prefHeight="70.0" prefWidth="178.0" text="Buscar Cliente">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="inserirProduto" mnemonicParsing="false" onAction="#clickInserirProduto" prefHeight="64.0" prefWidth="178.0" text="Inserir Novo Produto">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="79.0" layoutY="53.0" text="Menu">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="sairApp" layoutY="2.0" mnemonicParsing="false" onAction="#fecharApp" text="Sair" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="412.0" layoutY="53.0" text="Buscar Pedido">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="645.0" layoutY="456.0" mnemonicParsing="false" text="Limpar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField layoutX="288.0" layoutY="124.0" promptText="Informe o CPF">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></TextField>
+      <Pane layoutX="288.0" layoutY="164.0" prefHeight="317.0" prefWidth="284.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Pedidos:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="284.0" text="Total R$">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField layoutX="17.0" layoutY="40.0" prefHeight="219.0" prefWidth="245.0" />
+            <TextField layoutX="75.0" layoutY="281.0" prefHeight="25.0" prefWidth="106.0" />
+         </children>
+      </Pane>
+      <Label layoutX="612.0" layoutY="176.0" text="Cliente">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField layoutX="559.0" layoutY="203.0" />
+      <Button layoutX="501.0" layoutY="123.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="Buscar">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
