@@ -4947,97 +4947,102 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="1116" parent="378" name="Telefone">
-      <DasType>varchar(13)|0s</DasType>
+    <column id="1116" parent="378" name="CPF">
+      <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="1117" parent="378" name="email">
-      <DasType>varchar(140)|0s</DasType>
+    <column id="1117" parent="378" name="Telefone">
+      <DasType>varchar(13)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="1118" parent="378" name="Endereco">
-      <DasType>text|0s</DasType>
+    <column id="1118" parent="378" name="email">
+      <DasType>varchar(140)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="1119" parent="378" name="PRIMARY">
+    <column id="1119" parent="378" name="Endereco">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="1120" parent="378" name="PRIMARY">
       <ColNames>idCliente</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="1120" parent="378" name="PRIMARY">
+    <key id="1121" parent="378" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="1121" parent="379" name="idpedido">
+    <column id="1122" parent="379" name="idpedido">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="1122" parent="379" name="fkCliente">
+    <column id="1123" parent="379" name="fkCliente">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="1123" parent="379" name="Total">
+    <column id="1124" parent="379" name="Total">
       <DasType>float|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="1124" parent="379" name="listaPedidos">
+    <column id="1125" parent="379" name="listaPedidos">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="1125" parent="379" name="fk_Cliente">
+    <foreign-key id="1126" parent="379" name="fk_Cliente">
       <ColNames>fkCliente</ColNames>
       <RefColNames>idCliente</RefColNames>
       <RefTableName>cliente</RefTableName>
     </foreign-key>
-    <index id="1126" parent="379" name="PRIMARY">
+    <index id="1127" parent="379" name="PRIMARY">
       <ColNames>idpedido</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="1127" parent="379" name="fk_Cliente_idx">
+    <index id="1128" parent="379" name="fk_Cliente_idx">
       <ColNames>fkCliente</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1128" parent="379" name="PRIMARY">
+    <key id="1129" parent="379" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="1129" parent="380" name="idProduto">
+    <column id="1130" parent="380" name="idProduto">
       <AutoIncrement>6</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="1130" parent="380" name="Nome">
+    <column id="1131" parent="380" name="Nome">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="1131" parent="380" name="Preco">
+    <column id="1132" parent="380" name="Preco">
       <DasType>float|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="1132" parent="380" name="Tipo">
+    <column id="1133" parent="380" name="Tipo">
       <DasType>varchar(45)|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="1133" parent="380" name="PRIMARY">
+    <index id="1134" parent="380" name="PRIMARY">
       <ColNames>idProduto</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="1134" parent="380" name="PRIMARY">
+    <key id="1135" parent="380" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

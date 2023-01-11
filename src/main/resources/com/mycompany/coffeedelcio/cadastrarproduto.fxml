@@ -8,9 +8,9 @@
 
 <AnchorPane prefHeight="270.0" prefWidth="226.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.coffeedelcio.CadastroProduto">
    <children>
-      <TextField layoutX="39.0" layoutY="50.0" prefHeight="25.0" prefWidth="157.0" promptText="Nome do Produto" />
-      <TextField layoutX="40.0" layoutY="123.0" prefHeight="25.0" prefWidth="157.0" promptText="Valor R$" />
-      <Button layoutX="65.0" layoutY="206.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="107.0" text="Cadastrar">
+      <TextField fx:id="NomeProduto" layoutX="39.0" layoutY="50.0" prefHeight="25.0" prefWidth="157.0" promptText="Nome do Produto" />
+      <TextField fx:id="ValorProduto" layoutX="40.0" layoutY="123.0" prefHeight="25.0" prefWidth="157.0" promptText="Valor R$" />
+      <Button fx:id="BotaoCadastro" layoutX="65.0" layoutY="206.0" mnemonicParsing="false" onAction="#CadastroProduto" prefHeight="35.0" prefWidth="107.0" text="Cadastrar">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

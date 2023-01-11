@@ -5,15 +5,13 @@ import java.sql.Statement;
 public class Cliente {
     private String nome;
     private String cpf;
-
-
-
     private String telefone;
     private String email;
     private String endereco;
 
-    public Cliente(String nome, String telefone, String email, String endereco) {
+    public Cliente(String nome, String cpf, String telefone, String email, String endereco) {
         this.nome = nome;
+        this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
@@ -32,7 +30,6 @@ public class Cliente {
         getStatement().execute("INSERT INTO cliente (nome, telefone, email, endereco) values ('" +cli.getNome() +"','" + cli.getTelefone() + "','" + cli.getEmail() +"','" + cli.getEndereco() + "');");
 
     }
-
 
     public String getNome() {
         return nome;
