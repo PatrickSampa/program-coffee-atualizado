@@ -1,4 +1,4 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.jfx;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

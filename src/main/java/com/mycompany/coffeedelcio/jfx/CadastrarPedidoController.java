@@ -1,4 +1,4 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.jfx;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -44,17 +44,19 @@ public class CadastrarPedidoController implements Initializable {
     @FXML
     private CheckBox boxConfirmarPedido;
 
-
     public String nomeP;
 
     public double valorFinal;
 
     public String nomesFinal;
-    public String todosPedidos;
+
+    public String todosPedidos = "";
 
     List<String> list = new ArrayList<>();
 
     double armazenarValor;
+
+    private int valorTotal = 0;
 
 
     public String getNome() {
@@ -81,10 +83,11 @@ public class CadastrarPedidoController implements Initializable {
 
     @FXML
     void AdicionarPedido(ActionEvent event) {
+        System.out.println(todosPedidos);
         todosPedidos += pedidoInformado.getText() + "\n";
         pedidosAdicionados.setText(todosPedidos);
-
-
+        ValorTotalPagar.setText(String.valueOf(valorTotal));
+        System.out.println(todosPedidos);
 
     }
 
@@ -158,22 +161,27 @@ public class CadastrarPedidoController implements Initializable {
 
         if (getNome().equals("Cookies")) {
             armazenarValor = valor * 10;
+            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         } else if (getNome().equals("Brownies")) {
             armazenarValor = valor * 4.50;
+            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         } else if (getNome().equals("Torta de Morango")) {
             armazenarValor = valor * 16.50;
+            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         }else if(getNome().equals("Café")){
             armazenarValor = valor * 3.50;
+            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         }else if(getNome().equals("Beijinho de Coco")){
             armazenarValor = valor * 8.50;
+            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         }

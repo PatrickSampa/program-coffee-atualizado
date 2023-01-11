@@ -1,4 +1,4 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.jfx;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
