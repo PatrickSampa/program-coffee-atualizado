@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -41,6 +42,8 @@ public class CadastroProduto {
     void CadastroProduto(ActionEvent event) throws SQLException {
         Produto produto = new Produto(NomeProduto.getText(), ValorProduto.getText());
         getStatement().execute("INSERT INTO produto (Nome, Preco) values ('" + produto.getNome() + "','" + produto.getPreco() + "');");
+        JOptionPane.showMessageDialog(null, "Produto Cadastrado");
+
     }
 
 }

@@ -5,20 +5,36 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 public class MenuPrincipal  {
+
+    @FXML
+    private TextField FieldCPF;
+
+    @FXML
+    private TextField FieldCliente;
+
+    @FXML
+    private TextField FieldPedidos;
+
+    @FXML
+    private TextField FieldTotal;
+
+    @FXML
+    private Button SearchButton;
 
     @FXML
     private Button clickBuscarCliente;
@@ -34,6 +50,24 @@ public class MenuPrincipal  {
 
     @FXML
     private Button sairApp;
+
+    private Statement statement;
+
+    public Statement getStatement() {
+        return statement;
+    }
+
+    public void setStatement(Statement statement) {
+        this.statement = statement;
+    }
+
+    {
+        try {
+            setStatement(Driver.createConnection());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @FXML
     void buscarCliente(ActionEvent event) throws IOException{
@@ -80,6 +114,34 @@ public class MenuPrincipal  {
         Stage stage = (Stage) sairApp.getScene().getWindow();
         stage.close();
         Platform.exit();
+    }
+
+    @FXML
+    void SearchPedidos(ActionEvent event) throws SQLException {
+        int id = 0;
+        String nome = "";
+        String pedidos = "";
+        String listaPedidos = "";
+        String cpf = FieldCPF.getText();
+        float total = 0;
+        ResultSet rs = getStatement().executeQuery("SELECT * from cliente where cpf = '" + cpf + "';");
+        while (rs.next()){
+            id = rs.getInt(1);
+            nome = rs.getString(2);
+        }
+        ResultSet resultSets = getStatement().executeQuery("SELECT * from pedido where fkCliente = '" + id + "';");
+        while (resultSets.next()){
+            total = resultSets.getFloat(3);
+            pedidos = resultSets.getString(4);
+        }
+        String[] list = pedidos.split(",");
+        for (String l: list) {
+            listaPedidos += l + "\n";
+        }
+
+        FieldPedidos.setText(listaPedidos);
+        FieldCliente.setText(nome);
+        FieldTotal.setText(String.valueOf(total));
     }
 
 

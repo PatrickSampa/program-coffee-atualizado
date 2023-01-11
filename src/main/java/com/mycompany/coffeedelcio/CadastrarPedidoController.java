@@ -132,7 +132,7 @@ public class CadastrarPedidoController implements Initializable {
     @FXML
     void clickCadastrarProduto(ActionEvent event) throws SQLException {
         int id = 0;
-        String sql = "SELECT idCliente from cliente where Telefone like '"+ ProcurarCliente.getText() + "';";
+        String sql = "SELECT idCliente from cliente where cliente.CPF like '"+ ProcurarCliente.getText() + "';";
         ResultSet rs = getStatement().executeQuery(sql);
         while (rs.next()){
             id = rs.getInt(1);

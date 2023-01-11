@@ -54,7 +54,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField layoutX="288.0" layoutY="124.0" promptText="Informe o CPF">
+      <TextField fx:id="FieldCPF" layoutX="288.0" layoutY="124.0" promptText="Informe o CPF">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></TextField>
@@ -70,8 +70,11 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField layoutX="17.0" layoutY="40.0" prefHeight="219.0" prefWidth="245.0" />
-            <TextField layoutX="75.0" layoutY="281.0" prefHeight="25.0" prefWidth="106.0" />
+            <TextField fx:id="FieldPedidos" alignment="TOP_LEFT" layoutX="19.0" layoutY="46.0" prefHeight="213.0" prefWidth="243.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></TextField>
+            <TextField fx:id="FieldTotal" layoutX="75.0" layoutY="281.0" prefHeight="25.0" prefWidth="106.0" />
          </children>
       </Pane>
       <Label layoutX="612.0" layoutY="176.0" text="Cliente">
@@ -79,8 +82,8 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="559.0" layoutY="203.0" />
-      <Button layoutX="501.0" layoutY="123.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="Buscar">
+      <TextField fx:id="FieldCliente" layoutX="559.0" layoutY="203.0" />
+      <Button fx:id="SearchButton" layoutX="501.0" layoutY="123.0" mnemonicParsing="false" onAction="#SearchPedidos" prefHeight="27.0" prefWidth="97.0" text="Buscar">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

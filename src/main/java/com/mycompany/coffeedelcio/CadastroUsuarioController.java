@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javax.swing.*;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -55,6 +56,11 @@ public class CadastroUsuarioController {
          Cliente cliente = new Cliente(NomeUser.getText(),CPFUser.getText(),TelefoneUser.getText(),EmailUser.getText(),EnderecoUser.getText());
          getStatement().execute("INSERT INTO cliente (nome, CPF, Telefone, email, Endereco) values ('" +cliente.getNome() +"','" + cliente.getCpf() + "','" + cliente.getTelefone() +"','" + cliente.getEmail() +"','"+
                 cliente.getEndereco() +"');");
+         String title = "Usuário Cadastrado";
+
+        JOptionPane.showMessageDialog(null, "Nome: " + cliente.getNome(), "Usuário Cadastrado", JOptionPane.INFORMATION_MESSAGE);
+
+
 
     }
 

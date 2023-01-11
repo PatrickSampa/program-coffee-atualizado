@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -50,8 +51,15 @@ public class BuscarCliente {
     }
 
     @FXML
-    void BotaoBusca(ActionEvent event) {
-
+    void BotaoBusca(ActionEvent event) throws SQLException {
+        ResultSet rs = getStatement().executeQuery("SELECT * from  cliente where CPF = '" + CampoUser.getText()+"';");
+        while (rs.next()){
+            NomeUser.setText(rs.getString(2));
+            CPFUser.setText(rs.getString(3));
+            TelefoneUser.setText(rs.getString(4));
+            EmailUser.setText(rs.getString(5));
+            EnderecoUser.setText(rs.getString(6));
+        }
 
     }
 
