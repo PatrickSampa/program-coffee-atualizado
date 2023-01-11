@@ -52,7 +52,6 @@ public class CadastrarPedidoController implements Initializable {
     public String nomesFinal;
     public String todosPedidos;
 
-
     List<String> list = new ArrayList<>();
 
     double armazenarValor;
