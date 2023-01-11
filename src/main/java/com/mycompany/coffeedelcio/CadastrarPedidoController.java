@@ -50,6 +50,12 @@ public class CadastrarPedidoController implements Initializable {
     public double valorFinal;
 
     public String nomesFinal;
+    public String todosPedidos;
+
+    List<String> list = new ArrayList<>();
+
+    double armazenarValor;
+
 
     public String getNome() {
         return nomeP;
@@ -75,12 +81,8 @@ public class CadastrarPedidoController implements Initializable {
 
     @FXML
     void AdicionarPedido(ActionEvent event) {
-        List<String> list = new ArrayList<>();
-        list.add(pedidoInformado.getText());
-
-
-
-
+        todosPedidos += pedidoInformado.getText() + "\n";
+        pedidosAdicionados.setText(todosPedidos);
 
 
 
@@ -129,6 +131,7 @@ public class CadastrarPedidoController implements Initializable {
     @FXML
     void mostrarNoMeu(ActionEvent event) {
 
+
     }
 
 
@@ -152,7 +155,7 @@ public class CadastrarPedidoController implements Initializable {
 
 
     private double calculo(double valor) {//Calculo para o valor somado
-        double armazenarValor;
+
         if (getNome().equals("Cookies")) {
             armazenarValor = valor * 10;
             setValorFinal(armazenarValor);
