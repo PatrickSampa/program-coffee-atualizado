@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import javax.swing.*;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -138,15 +139,21 @@ public class CadastrarPedidoController implements Initializable {
             id = rs.getInt(1);
         }
         Pedido pedido = new Pedido(id, valorTotal, listadePedidos);
-
+        try{
         getStatement().execute("INSERT INTO pedido (fkCliente, Total, listaPedidos) VALUES ('" +pedido.getFkCliente() +"','" + pedido.getTotal() + "','" + pedido.getListaProdutos() + "');");
-
+        JOptionPane.showMessageDialog(null, "Valor Total:" +valorTotal, "Pedido Confirmado!", JOptionPane.INFORMATION_MESSAGE);
         valorTotal = 0;
         pedidosAdicionados.setText(null);
         ValorTotalPagar.setText(null);
         ProcurarCliente.setText(null);
         armazenarValor = 0;
         todosPedidos = "";
+        }
+        catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
+
 
     }
 
@@ -174,9 +181,7 @@ public class CadastrarPedidoController implements Initializable {
     @FXML
     void mostrarNoMeu(ActionEvent event) {
 
-
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

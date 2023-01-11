@@ -7,10 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
+import javax.swing.*;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,6 +31,9 @@ public class MenuPrincipal  {
 
     @FXML
     private TextField FieldPedidos;
+
+    @FXML
+    private TextArea FieldPedidos2;
 
     @FXML
     private TextField FieldTotal;
@@ -124,22 +129,31 @@ public class MenuPrincipal  {
         String listaPedidos = "";
         String cpf = FieldCPF.getText();
         float total = 0;
+
         ResultSet rs = getStatement().executeQuery("SELECT * from cliente where cpf = '" + cpf + "';");
         while (rs.next()){
             id = rs.getInt(1);
             nome = rs.getString(2);
         }
+        if (id == 0){
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+
+        }
+
         ResultSet resultSets = getStatement().executeQuery("SELECT * from pedido where fkCliente = '" + id + "';");
         while (resultSets.next()){
             total = resultSets.getFloat(3);
             pedidos = resultSets.getString(4);
+        }
+        if (total == 0 && id > 0){
+            JOptionPane.showMessageDialog(null, "Usuário não realizou pedidos!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
         String[] list = pedidos.split(",");
         for (String l: list) {
             listaPedidos += l + "\n";
         }
 
-        FieldPedidos.setText(listaPedidos);
+        FieldPedidos2.setText(listaPedidos);
         FieldCliente.setText(nome);
         FieldTotal.setText(String.valueOf(total));
     }

@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.swing.*;
 import java.io.IOException;
 
 
@@ -42,7 +43,7 @@ public class LoguinController  {
             stage.show();
             Main loguin = new Main();
 
-        }else if(textUser.getText()!="admin"){
+        }else {
             userIncorreto.setText("Incorrect user");
         }
 
