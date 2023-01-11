@@ -175,7 +175,6 @@ public class CadastrarPedidoController implements Initializable {
     void clockTorta(ActionEvent event) {
         pedidoInformado.setText("Torta de Morango");
         setNome("Torta de Morango");
-
     }
 
     @FXML
