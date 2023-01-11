@@ -8,6 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -51,12 +54,36 @@ public class CadastrarPedidoController implements Initializable {
     public String nomesFinal;
 
     public String todosPedidos = "";
+    public String listadePedidos = "";
 
-    List<String> list = new ArrayList<>();
+    List<Pedido> listaPedidos = new ArrayList<>();
+
+    List<Integer> listaProdutos = new ArrayList<>();
+
+    private Statement statement;
+    {
+        try {
+            setStatement(Driver.createConnection());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Statement getStatement() {
+        return statement;
+    }
+
+    public void setStatement(Statement statement) {
+        this.statement = statement;
+    }
 
     double armazenarValor;
 
-    private int valorTotal = 0;
+    private double valorTotal = 0;
+
+    private int idProduto = 0;
+
+    private int idCliente = 0;
 
 
     public String getNome() {
@@ -82,12 +109,12 @@ public class CadastrarPedidoController implements Initializable {
 
 
     @FXML
-    void AdicionarPedido(ActionEvent event) {
-        String sequel = "SELECT ";
+    void AdicionarPedido(ActionEvent event) throws SQLException {
+
         todosPedidos += pedidoInformado.getText() + "\n";
+        listadePedidos += pedidoInformado.getText() + ", ";
         pedidosAdicionados.setText(todosPedidos);
         ValorTotalPagar.setText(String.valueOf(valorTotal));
-
 
     }
 
@@ -106,8 +133,18 @@ public class CadastrarPedidoController implements Initializable {
     }
 
     @FXML
-    void clickCadastrarProduto(ActionEvent event) {
+    void clickCadastrarProduto(ActionEvent event) throws SQLException {
+        int id = 0;
+        String sql = "SELECT idCliente from cliente where Telefone like '"+ ProcurarCliente.getText() + "';";
+        ResultSet rs = getStatement().executeQuery(sql);
+        while (rs.next()){
+            id = rs.getInt(1);
+        }
+        Pedido pedido = new Pedido(id, valorTotal, listadePedidos);
 
+        getStatement().execute("INSERT INTO pedido (fkCliente, Total, listaPedidos) VALUES ('" +pedido.getFkCliente() +"','" + pedido.getTotal() + "','" + pedido.getListaProdutos() + "');");
+
+        valorTotal = 0;
     }
 
     @FXML
