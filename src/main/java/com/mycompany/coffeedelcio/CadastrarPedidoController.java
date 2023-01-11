@@ -41,15 +41,9 @@ public class CadastrarPedidoController implements Initializable {
     @FXML
     private TextField valorPedido;
 
-    @FXML
-    private CheckBox boxConfirmarPedido;
-
 
     public String nomeP;
-
     public double valorFinal;
-
-    public String nomesFinal;
 
     public String getNome() {
         return nomeP;
@@ -67,22 +61,12 @@ public class CadastrarPedidoController implements Initializable {
         this.valorFinal = valor;
     }
 
-    public void setNomesFinal(String nomes){ this.nomesFinal = nomes; }
-
-    public String getNomesFinal() {return nomesFinal;}
-
-
-
     @FXML
     void AdicionarPedido(ActionEvent event) {
-        List<String> list = new ArrayList<>();
-        list.add(pedidoInformado.getText());
+        List lista = new ArrayList<>();
+        while (true){
 
-
-
-
-
-
+        }
 
     }
 
@@ -126,17 +110,12 @@ public class CadastrarPedidoController implements Initializable {
 
     }
 
-    @FXML
-    void mostrarNoMeu(ActionEvent event) {
-
-    }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         SpinnerValueFactory<Integer> valueFactory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(0,20);
-        valueFactory.setValue(0);
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1,20);
+        valueFactory.setValue(1);
         quantidadePedido.setValueFactory(valueFactory);
         int valorSpinner = quantidadePedido.getValue();
         valorPedido.setText(String.valueOf(valorSpinner));
@@ -151,7 +130,7 @@ public class CadastrarPedidoController implements Initializable {
     }
 
 
-    private double calculo(double valor) {//Calculo para o valor somado
+    private double calculo(double valor) {
         double armazenarValor;
         if (getNome().equals("Cookies")) {
             armazenarValor = valor * 10;
