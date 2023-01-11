@@ -55,11 +55,6 @@ public class CadastrarPedidoController implements Initializable {
 
     public String todosPedidos = "";
     public String listadePedidos = "";
-
-    List<Pedido> listaPedidos = new ArrayList<>();
-
-    List<Integer> listaProdutos = new ArrayList<>();
-
     private Statement statement;
     {
         try {
@@ -145,6 +140,12 @@ public class CadastrarPedidoController implements Initializable {
         getStatement().execute("INSERT INTO pedido (fkCliente, Total, listaPedidos) VALUES ('" +pedido.getFkCliente() +"','" + pedido.getTotal() + "','" + pedido.getListaProdutos() + "');");
 
         valorTotal = 0;
+        pedidosAdicionados.setText(null);
+        ValorTotalPagar.setText(null);
+        ProcurarCliente.setText(null);
+        armazenarValor = 0;
+        todosPedidos = "";
+
     }
 
     @FXML
