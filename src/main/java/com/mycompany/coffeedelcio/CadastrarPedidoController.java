@@ -72,7 +72,7 @@ public class CadastrarPedidoController implements Initializable {
         this.statement = statement;
     }
 
-    double armazenarValor;
+    double armazenarValor = 0;
 
     private double valorTotal = 0;
 
@@ -106,10 +106,12 @@ public class CadastrarPedidoController implements Initializable {
     @FXML
     void AdicionarPedido(ActionEvent event) throws SQLException {
 
+        valorTotal+=armazenarValor;
         todosPedidos += pedidoInformado.getText() + "\n";
         listadePedidos += pedidoInformado.getText() + ", ";
         pedidosAdicionados.setText(todosPedidos);
         ValorTotalPagar.setText(String.valueOf(valorTotal));
+        armazenarValor = 0;
 
     }
 
@@ -199,27 +201,22 @@ public class CadastrarPedidoController implements Initializable {
 
         if (getNome().equals("Cookies")) {
             armazenarValor = valor * 10;
-            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         } else if (getNome().equals("Brownies")) {
             armazenarValor = valor * 4.50;
-            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         } else if (getNome().equals("Torta de Morango")) {
             armazenarValor = valor * 16.50;
-            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         }else if(getNome().equals("Café")){
             armazenarValor = valor * 3.50;
-            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         }else if(getNome().equals("Beijinho de Coco")){
             armazenarValor = valor * 8.50;
-            valorTotal+=armazenarValor;
             setValorFinal(armazenarValor);
             return armazenarValor;
         }

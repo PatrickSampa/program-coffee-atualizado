@@ -4,6 +4,10 @@ import java.sql.Statement;
 
 public class Cliente {
     private String nome;
+    private String cpf;
+
+
+
     private String telefone;
     private String email;
     private String endereco;
@@ -60,6 +64,23 @@ public class Cliente {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Cliente(String nome, String cpf, String telefone, String email, String endereco, Statement statement) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+        this.endereco = endereco;
+        this.statement = statement;
     }
 
     public Statement getStatement() {
