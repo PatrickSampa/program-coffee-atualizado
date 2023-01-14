@@ -153,8 +153,6 @@ public class CadastrarPedidoController implements Initializable {
             JOptionPane.showMessageDialog(null, "Usuário não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
 
-
-
     }
 
     @FXML
