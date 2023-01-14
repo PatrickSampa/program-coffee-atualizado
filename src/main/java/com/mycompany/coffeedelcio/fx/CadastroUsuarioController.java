@@ -1,5 +1,7 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.fx;
 
+import com.mycompany.coffeedelcio.classe.Cliente;
+import com.mycompany.coffeedelcio.classe.Driver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

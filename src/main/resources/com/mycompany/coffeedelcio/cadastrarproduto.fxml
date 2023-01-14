@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="270.0" prefWidth="226.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.coffeedelcio.CadastroProduto">
+<AnchorPane prefHeight="270.0" prefWidth="226.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.coffeedelcio.fx.CadastroProduto">
    <children>
       <TextField fx:id="NomeProduto" layoutX="39.0" layoutY="50.0" prefHeight="25.0" prefWidth="157.0" promptText="Nome do Produto" />
       <TextField fx:id="ValorProduto" layoutX="40.0" layoutY="123.0" prefHeight="25.0" prefWidth="157.0" promptText="Valor R$" />

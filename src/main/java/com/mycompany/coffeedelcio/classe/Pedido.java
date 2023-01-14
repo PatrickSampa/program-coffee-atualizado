@@ -1,4 +1,4 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.classe;
 
 public class Pedido {
 

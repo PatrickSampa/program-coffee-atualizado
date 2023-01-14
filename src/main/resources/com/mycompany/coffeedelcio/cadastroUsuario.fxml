@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="477.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.coffeedelcio.CadastroUsuarioController">
+<AnchorPane prefHeight="477.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.coffeedelcio.fx.CadastroUsuarioController">
    <children>
       <Button fx:id="CadastroButton" layoutX="299.0" layoutY="416.0" mnemonicParsing="false" onAction="#ButtonPersist" prefHeight="37.0" prefWidth="112.0" text="Cadastrar">
          <font>

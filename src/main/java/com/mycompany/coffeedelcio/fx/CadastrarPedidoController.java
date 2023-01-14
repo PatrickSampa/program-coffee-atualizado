@@ -1,5 +1,7 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.fx;
 
+import com.mycompany.coffeedelcio.classe.Driver;
+import com.mycompany.coffeedelcio.classe.Pedido;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -12,8 +14,6 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class CadastrarPedidoController implements Initializable {

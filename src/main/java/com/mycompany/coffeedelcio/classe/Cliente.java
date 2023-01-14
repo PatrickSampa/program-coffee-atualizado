@@ -1,4 +1,4 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.classe;
 import java.sql.SQLException;
 import java.sql.Statement;
 

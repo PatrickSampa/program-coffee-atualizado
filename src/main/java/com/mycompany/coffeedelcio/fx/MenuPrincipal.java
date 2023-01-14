@@ -1,6 +1,8 @@
-package com.mycompany.coffeedelcio;
+package com.mycompany.coffeedelcio.fx;
 
 
+import com.mycompany.coffeedelcio.Main;
+import com.mycompany.coffeedelcio.classe.Driver;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,8 +19,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicReference;
 
 
 public class MenuPrincipal  {
