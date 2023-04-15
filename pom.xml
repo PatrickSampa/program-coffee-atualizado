@@ -75,7 +75,8 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.mycompany.coffeedelcio/com.mycompany.coffeedelcio.Main
+                            <mainClass>
+                                com.mycompany.coffeedelcio/com.mycompany.coffeedelcio.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

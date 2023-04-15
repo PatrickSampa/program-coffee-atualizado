@@ -14,7 +14,7 @@ public class Cliente {
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
-        this.endereco = endereco;
+            this.endereco = endereco;
     }
 
     private Statement statement;
